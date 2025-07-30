@@ -14,6 +14,28 @@ body {
   position: relative;
 }
 
+body::after {
+  content: '';
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 150px;
+  background: linear-gradient(to top, rgba(0,0,0,0.6), transparent);
+  z-index: -1;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6); /* Bisa diubah lebih terang/gelap */
+  z-index: -1;
+}
+
+
 .stars {
   background: url('https://i.ibb.co/YL2Jxfs/stars.png') repeat;
   position: fixed;
@@ -185,4 +207,180 @@ footer {
   font-size: 0.9rem;
   background: rgba(0, 0, 0, 0.3);
   margin-top: 4rem;
+}
+
+#bg-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  min-height: 100%;
+  object-fit: cover;
+  object-position: 50% 40%; /* Ini yang ngebenerin posisi bumi */
+  z-index: -3;
+}
+
+/* SCROLL DOWN ARROW */
+.scroll-down {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 2.5rem;
+  color: #00ffff;
+  animation: bounce 1.5s infinite;
+  z-index: 10;
+  cursor: pointer;
+  opacity: 0.9;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateX(-50%) translateY(0);
+  }
+  50% {
+    transform: translateX(-50%) translateY(-12px);
+  }
+}
+
+/* Tambahan supaya posisi parent relatif */
+.hero {
+  position: relative;
+}
+
+.side-pic {
+  position: absolute;
+  top: 50%;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  transform: translateY(-50%);
+  box-shadow: 0 0 20px #00ffff;
+  border: 2px solid white;
+  z-index: 5;
+}
+
+/* kiri */
+.side-pic.left {
+  left: calc(50% - 500px); /* posisi kiri dari tengah */
+}
+
+/* kanan */
+.side-pic.right {
+  right: calc(50% - 500px); /* posisi kanan dari tengah */
+}
+
+
+.mahkota {
+  position: absolute;
+  width: 80px;
+  top: -30px; /* geser ke atas */
+  z-index: 2;
+  animation: crown-bounce 2s infinite;
+}
+
+@keyframes crown-bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+.btn.ig {
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+  color: white;
+  border: none;
+  transition: transform 0.2s ease-in-out;
+}
+
+.btn.ig:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(255, 0, 132, 0.5);
+}
+
+@media (max-width: 992px) {
+  .glass {
+    width: 90%;
+    padding: 1.5rem;
+    gap: 1rem;
+  }
+
+  .glass h1 {
+    font-size: 1.8rem;
+    text-align: center;
+  }
+
+  .glass p {
+    font-size: 1rem;
+    text-align: center;
+  }
+
+  .glass .btn {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.8rem;
+  }
+
+  .glass .btn button {
+    width: 100%;
+    font-size: 1rem;
+  }
+
+  .side-pic {
+    width: 100px;
+    height: 100px;
+    opacity: 0.5;
+  }
+
+  .side-pic.left {
+    left: 5%;
+    top: 65%;
+  }
+
+  .side-pic.right {
+    right: 5%;
+    top: 65%;
+  }
+
+  .scroll-down {
+    bottom: 2rem;
+    font-size: 1.5rem;
+  }
+
+  table {
+    font-size: 0.85rem;
+    width: 100%;
+    overflow-x: auto;
+    display: block;
+  }
+}
+
+@media (max-width: 576px) {
+  .glass {
+    width: 95%;
+    padding: 1rem;
+  }
+
+  .glass h1 {
+    font-size: 1.5rem;
+  }
+
+  .glass p {
+    font-size: 0.9rem;
+  }
+
+  .side-pic {
+    display: none;
+  }
+
+  .scroll-down {
+    font-size: 1.2rem;
+  }
+
+  table {
+    font-size: 0.8rem;
+  }
 }

@@ -7,15 +7,34 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <video autoplay muted loop id="bg-video">
+    <source src="background.mp4" type="video/mp4">
+    Browser lu gak support video background.
+  </video>
+  <div class="overlay"></div>
   <div class="stars"></div>
   <header class="hero">
     <div class="glass">
+
+      <img src="moskov.png" alt="Kiri" class="side-pic left" />
+
+      <img src="mahkota.png" alt="Mahkota" class="mahkota" />
+
       <img src="bangkikir.png" alt="Wildan Subhan" class="profile-pic" />
       <h1>⚔️ Wildan Subhan Saputra ⚔️</h1>
       <p class="tagline">Top Global <span>Magic Chess GoGo</span> & Streamer Mirip Kupa</p>
-      <a href="https://saweria.co/wildansubhansaputra" target="_blank" class="btn saweria">💸 Saweriain Bang Wildan</a>
-      <a href="https://www.tiktok.com/link/v2?aid=1988&lang=id-ID&scene=bio_url&target=https%3A%2F%2Fsaweria.co%2FWildanSubhanallah" target="_blank" class="btn">🎥 Lihat Live TikTok</a>
+      <a href="https://www.tiktok.com/link/v2?aid=1988&lang=id-ID&scene=bio_url&target=https%3A%2F%2Fsaweria.co%2FWildanSubhanallah" target="_blank" class="btn saweria">💸 Saweriain Bang Wildan</a>
+      <a href="https://www.tiktok.com/@wildansubhansaputra" target="_blank" class="btn">🎥 Lihat TikTok</a>
+      <a href="https://www.instagram.com/wildan_subhanallah/" target="_blank" class="btn ig">📸 Lihat Instagram</a>
+
     </div>
+
+     <img src="faeborn.png" alt="Kanan" class="side-pic right" />
+
+    <div class="scroll-down" title="Scroll ke bawah dong ⬇️">
+  ⬇️
+</div>
+
   </header>
 
   <section class="about">
@@ -96,5 +115,15 @@
     <p>🌌 Dibuat dengan cinta oleh Danil F. — Untuk streamer legenda: <strong>Wildan Subhan</strong>.  
     Website ini ultra mega bagus, bahkan Zeus pun gabisa bikin yang kayak gini 😤⚡</p>
   </footer>
+
+  <script>
+  const scrollDown = document.querySelector('.scroll-down');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 100) {
+      scrollDown.style.display = 'none';
+    }
+  });
+</script>
+
 </body>
 </html>
