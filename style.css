@@ -67,6 +67,12 @@ body::after {
   padding: 2rem;
   max-width: 600px;
   box-shadow: 0 0 30px rgba(255, 255, 255, 0.1);
+  z-index: 2;
+  position: relative;
+}
+
+.glass, .card, footer {
+  position: relative;
 }
 
 .profile-pic {
@@ -216,8 +222,7 @@ footer {
   min-width: 100%;
   min-height: 100%;
   object-fit: cover;
-  object-position: 50% 40%; /* Ini yang ngebenerin posisi bumi */
-  z-index: -3;
+  z-index: -2;
 }
 
 /* SCROLL DOWN ARROW */
@@ -246,6 +251,7 @@ footer {
 /* Tambahan supaya posisi parent relatif */
 .hero {
   position: relative;
+  z-index: 1;
 }
 
 .side-pic {
